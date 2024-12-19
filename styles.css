@@ -1,0 +1,13 @@
+body {
+    background-color: white;
+}
+
+h1 {
+    color:gray;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
