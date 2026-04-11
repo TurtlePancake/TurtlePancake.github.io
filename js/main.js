@@ -45,50 +45,6 @@ navLinksList.querySelectorAll('.nav-link').forEach(link => {
 });
 
 /* =========================================
-   TYPING ANIMATION
-   ========================================= */
-const phrases = [
-  'MIS Student.',
-  'Full-Stack Developer.',
-  'Game Designer.',
-  'IT Professional.',
-  'Eagle Scout.',
-];
-
-const typingEl = document.getElementById('typing-text');
-let phraseIndex = 0;
-let charIndex   = 0;
-let isDeleting  = false;
-let typingTimer;
-
-function type() {
-  const current = phrases[phraseIndex];
-
-  if (isDeleting) {
-    charIndex--;
-    typingEl.textContent = current.slice(0, charIndex);
-  } else {
-    charIndex++;
-    typingEl.textContent = current.slice(0, charIndex);
-  }
-
-  let delay = isDeleting ? 60 : 100;
-
-  if (!isDeleting && charIndex === current.length) {
-    delay = 2000; // pause at end
-    isDeleting = true;
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    phraseIndex = (phraseIndex + 1) % phrases.length;
-    delay = 400;
-  }
-
-  typingTimer = setTimeout(type, delay);
-}
-
-type();
-
-/* =========================================
    SMOOTH SCROLL for anchor links
    ========================================= */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
