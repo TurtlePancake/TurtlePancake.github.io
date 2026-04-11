@@ -1,0 +1,97 @@
+/* =========================================
+   SCROLL REVEAL
+   ========================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children inside a revealed parent */
+.skills-grid .reveal:nth-child(2) { transition-delay: 0.1s; }
+.skills-grid .reveal:nth-child(3) { transition-delay: 0.2s; }
+.skills-grid .reveal:nth-child(4) { transition-delay: 0.3s; }
+
+.projects-grid .reveal:nth-child(2) { transition-delay: 0.1s; }
+.projects-grid .reveal:nth-child(3) { transition-delay: 0.2s; }
+.projects-grid .reveal:nth-child(4) { transition-delay: 0.3s; }
+
+.education-grid .reveal:nth-child(2) { transition-delay: 0.1s; }
+
+.timeline-item.reveal:nth-child(2) { transition-delay: 0.15s; }
+
+/* =========================================
+   HOVER GLOW ON ACCENT ELEMENTS
+   ========================================= */
+.project-card:hover .project-icon,
+.skill-category:hover .skill-category-title {
+  text-shadow: 0 0 12px rgba(100, 255, 218, 0.4);
+}
+
+/* =========================================
+   NAV LINK UNDERLINE SLIDE
+   ========================================= */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0.8rem;
+  right: 0.8rem;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* =========================================
+   HAMBURGER OPEN STATE
+   ========================================= */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =========================================
+   TIMELINE MARKER PULSE
+   ========================================= */
+.timeline-marker::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.timeline-item:hover .timeline-marker::after {
+  opacity: 0.5;
+}
+
+/* =========================================
+   SKILL DOT GLOW ON HOVER
+   ========================================= */
+.skill-item:hover .skill-dot {
+  box-shadow: 0 0 8px var(--accent);
+}
