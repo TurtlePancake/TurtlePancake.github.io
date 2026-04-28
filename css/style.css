@@ -244,6 +244,19 @@ img {
   background: var(--accent-dim);
 }
 
+/* Play tab — amber highlight to stand out from regular nav links */
+.nav-play {
+  color: #ffb84a !important;
+  border: 1px solid rgba(255, 184, 74, 0.3);
+  border-radius: var(--radius);
+}
+.nav-play:hover,
+.nav-play.active {
+  color: #ffb84a !important;
+  background: rgba(255, 184, 74, 0.1) !important;
+  border-color: rgba(255, 184, 74, 0.6);
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
